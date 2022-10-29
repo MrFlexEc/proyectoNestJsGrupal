@@ -1,8 +1,0 @@
-ENTIDAD AUTOS
-ID, Descripcion, Placa, Color, Fabricante, Tipo, Año, clasificacion
-
-ENTIDAD CONCEPTO
-ID, Descripcion
-
-ENTIDAD MANTENIMIENTO
-ID, ID VEHICULO, ID CONCEPTO, FECHA MANTENIMIENTO, DETALLE, PRECIO
