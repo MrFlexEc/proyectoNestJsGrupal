@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
-import { EquiposService } from './servicios/equipos.service';
+import { EquiposServicios } from './servicios/equipos.service';
 import { EquiposController } from './controladores/equipos.controller';
+import { Equiposprovider } from './proveedor/equipos.provider';
+//Se importa la conexion a la base de datos 
+import { DatabaseModule } from 'src/Database/database.modulo';
 
 @Module({
-  providers: [EquiposService],
+  //hacer la conexion indicando que este modulo va a utilizar este dominio bajo la entidad Equipos
+  imports:[DatabaseModule],
+  providers: [...Equiposprovider,EquiposServicios],
   controllers: [EquiposController]
 })
 export class EquiposModule {}

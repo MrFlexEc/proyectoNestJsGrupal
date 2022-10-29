@@ -1,18 +1,18 @@
 Mi tema es: ENCUENTROS DEPORTIVOS
 
-TABLA - EQUIPO 
+TABLA - EQUIPOS
 
 Id_equipo
 nombre_equipo
 Descripcion_equipo
 Serie_equipo
 
-TABLA - TORNEO 
+TABLA - TORNEOS
  
 Id_torneo
 descripcion_torneo
 
-TABLA - PARTIDO 
+TABLA - PARTIDOS
 
 id_partido
 id_torneo

@@ -11,7 +11,7 @@ export const DatabaseED = [
         port: 5432,
         username: 'postgres',
         password: 'Xavier1802',
-        database: 'encuentros_Deportivos',
+        database: 'encuentros_deportivos',
         entities: [
             __dirname + '/../**/*.entity{.ts,.js}',
         ],
