@@ -1,0 +1,17 @@
+Tema: REGISTRO DE CALORIAS 
+ENTIDAD 1_Vinculada:
+	-plato
+ATRIBUTO:
+	id_plato, nombre_de_Plato
+
+ENTIDAD 2_Vinculada:
+	-Paciente
+ATRIBUTO:
+	id_paciente,nombre,identificacion,edad,altura
+
+ENTIDAD 3_Transac:
+	-Registro
+ATRIBUTO:
+	id_registro,id_paciente,id_plato,fecha,hora,numero_calorias_consumidas,numero_de_porciones
+
+
