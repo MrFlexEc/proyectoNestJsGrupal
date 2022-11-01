@@ -9,18 +9,18 @@ import { Equipos } from '../entidades/equipo.entity';
 export class EquiposServicios {
     //Se crea un constructor para realizar la inyeccion de dependencias para usar el repository
     constructor(
-        @Inject("EQUIPOS _REPOSITORY") private EquiposRepos: Repository<Equipos>
+        @Inject("EQUIPOS_REPOSITORY") private EquiposRepos: Repository<Equipos>
     ){}
 
     //Realizar las funciones para las peticiones
 
     //función para buscar todos los equipos
-    async findAll(){
+    async MostarTodosEquipos(){
         return this.EquiposRepos.find();
     }
 
     //función para buscar un solo equipo
-    findOne(id: number){
+    MostarUnEquipo(id: number){
         return this.EquiposRepos.findOne({
             where:{
                 Id_equipo:id
@@ -29,7 +29,7 @@ export class EquiposServicios {
     }
 
     //función para crear un equipo
-    create(body:any){
+    CrearEquipo(body:any){
         //Creacion de la tarea con metodo create
         const newTask = this.EquiposRepos.create(body);
         //Se guarda en la base de datos esta tarea
@@ -37,7 +37,7 @@ export class EquiposServicios {
     }
 
     //función para modificar una equipo
-    async update(id:number, body:any){
+    async ActualizarEquipo(id:number, body:any){
         //obtener la tarea
         const taskfind= await this.EquiposRepos.findOne({
             where:{
@@ -51,7 +51,7 @@ export class EquiposServicios {
 
 
     //función para eliminar un equipo
-    async delete(id:number){
+    async EliminarEquipo(id:number){
         await this.EquiposRepos.delete(id);
         return true;
     }

@@ -3,7 +3,7 @@ Mi tema es: ENCUENTROS DEPORTIVOS
 TABLA - EQUIPOS
 
 Id_equipo
-nombre_equipo
+Nombre_equipo
 Descripcion_equipo
 Serie_equipo
 
@@ -14,11 +14,11 @@ descripcion_torneo
 
 TABLA - PARTIDOS
 
-id_partido
-id_torneo
-id_equipo_1
-id_equipo_2
+Id_partido
+Id_torneo
+Id_equipo_1
+Id_equipo_2
 Fecha_partido
-goles_equipo_1
-goles_equipo_2
-observacion_partido
+Goles_equipo_1
+Goles_equipo_2
+Observacion_partido

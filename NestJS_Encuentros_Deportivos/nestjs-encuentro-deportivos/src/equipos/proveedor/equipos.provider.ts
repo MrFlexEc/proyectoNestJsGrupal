@@ -5,7 +5,7 @@ import { Equipos } from '../entidades/equipo.entity';
 
 export const Equiposprovider = [
   {
-    provide: 'EQUIPOS _REPOSITORY',
+    provide: 'EQUIPOS_REPOSITORY',
     useFactory: (dataSource: DataSource) => dataSource.getRepository(Equipos),
     inject: ['DATA_SOURCE'],
   },

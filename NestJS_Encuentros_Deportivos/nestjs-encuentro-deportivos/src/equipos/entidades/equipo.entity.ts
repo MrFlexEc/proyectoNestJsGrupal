@@ -9,7 +9,7 @@ export class Equipos {
     Id_equipo:number
 
     @Column()
-    nombre_equipo:string;
+    Nombre_equipo:string;
 
     @Column()
     Descripcion_equipo: string;
