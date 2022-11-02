@@ -2,12 +2,14 @@
 import { Injectable, Inject } from '@nestjs/common';
 //importar los patrones de repository para trabajar mas ordenado
 import{Repository}from 'typeorm'
-//Se importa la entidad o tabla para trabjar
-import { Equipos } from '../entidades/equipo.entity'; 
+//Se importa la entidad o tabla para trabajar
+import { Equipos } from '../entidades/equipos.entity'; 
+//importamos las validaciones
+import { CrearModificarEquipo } from '../validaciones/equipos.dto';
 
 @Injectable()
 export class EquiposServicios {
-    //Se crea un constructor para realizar la inyeccion de dependencias para usar el repository
+    //Se crea un constructor para realizar la inyección de dependencias para usar el repository
     constructor(
         @Inject("EQUIPOS_REPOSITORY") private EquiposRepos: Repository<Equipos>
     ){}
@@ -29,7 +31,7 @@ export class EquiposServicios {
     }
 
     //función para crear un equipo
-    CrearEquipo(body:any){
+    CrearEquipo(body:CrearModificarEquipo){
         //Creacion de la tarea con metodo create
         const newTask = this.EquiposRepos.create(body);
         //Se guarda en la base de datos esta tarea
@@ -37,14 +39,14 @@ export class EquiposServicios {
     }
 
     //función para modificar una equipo
-    async ActualizarEquipo(id:number, body:any){
+    async ActualizarEquipo(id:number, body:CrearModificarEquipo){
         //obtener la tarea
         const taskfind= await this.EquiposRepos.findOne({
             where:{
                 Id_equipo:id
             }
         });
-        //Se usa la funcion merge que une los datos actuales con entidad con datos que vengan en el body
+        //Se usa la función merge que une los datos actuales con entidad con datos que vengan en el body
         this.EquiposRepos.merge(taskfind, body)
         return this.EquiposRepos.save(taskfind)
     }

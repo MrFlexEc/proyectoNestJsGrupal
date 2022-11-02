@@ -6,7 +6,7 @@ import { Equiposprovider } from './proveedor/equipos.provider';
 import { DatabaseModule } from 'src/Database/database.modulo';
 
 @Module({
-  //hacer la conexion indicando que este modulo va a utilizar este dominio bajo la entidad Equipos
+  //hacer la conexión indicando que este módulo va a utilizar este dominio bajo la entidad Equipos
   imports:[DatabaseModule],
   providers: [...Equiposprovider,EquiposServicios],
   controllers: [EquiposController]

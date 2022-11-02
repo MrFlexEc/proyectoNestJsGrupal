@@ -2,11 +2,13 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 //importamos servicios los cuales tienen las funciones que responderan al cliente
 import { PartidosServicios } from '../servicios/partidos.service';
+//importamos las validaciones
+import { CrearModificarPartido } from '../validaciones/partidos.dto';
 
 @Controller('api/rest/partidos')
 export class PartidosController {
 
-//Se realiza una iyeccion de dependencia para que el controlador pueda ejecutar las funciones
+//Se realiza una inyección de dependencia para que el controlador pueda ejecutar las funciones
 constructor(
     private partidosServicios: PartidosServicios
 ){}
@@ -28,21 +30,21 @@ MostrarUno(@Param('id') id: number){
 }
 
 //Ruta para crear un partido
-//En este caso se utiliza el decorador body porque de ahí recibe toda la informacion
+//En este caso se utiliza el decorador body porque de ahí recibe toda la información
 @Post()
-Crear(@Body()body: any){
+Crear(@Body()body: CrearModificarPartido){
     return this.partidosServicios.CrearUnPartido(body);
 }
 
 //Ruta para actualizar un partido
 //Se recibe un parametro que es el id y el body para actualizar
 @Put(':id')
-Actualizar(@Param('id')id:number, @Body()body:any){
+Actualizar(@Param('id')id:number, @Body()body:CrearModificarPartido){
     return this.partidosServicios.ActualizarUnPartido(id,body);
 }
 
 //Ruta para eliminar un partido
-//El delete retorna se se eliminio o no a traves de un booleano
+//El delete retorna si se eliminio o no a través de un booleano
 @Delete(':id')
 Eliminar(@Param('id') id:number){
     return this.partidosServicios.EliminarUnPartido(id);
