@@ -10,7 +10,7 @@ Serie_equipo
 TABLA - TORNEOS
  
 Id_torneo
-descripcion_torneo
+Descripcion_torneo
 
 TABLA - PARTIDOS
 
