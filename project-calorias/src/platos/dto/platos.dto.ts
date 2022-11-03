@@ -1,7 +1,8 @@
-export class CreatePlatoDTO{
-    id_p:Number;
-    nombre_plato:string;
-    porciones: string;
+//Creacion de clase donde se enviaran los datos de la aplicacion cliente/Servidor
+  export class CreatePlatoDTO{
+    //atributos asignados por el docente.
+     nombre_plato:string;
+     porciones: string;
 
 }
-//de la aplicacion cliente va a recibir..
+ 

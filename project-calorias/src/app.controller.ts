@@ -1,6 +1,7 @@
+//importaciones de librerias
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-
+//controlador
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}

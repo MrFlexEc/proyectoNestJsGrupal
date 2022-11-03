@@ -1,9 +1,7 @@
+//importacion de la libreria 
 import {Document} from 'mongoose';
-
-export interface Platos extends Document{
-    readonly id_p:Number;
-    readonly nombre_plato:String;
-    readonly porciones: String;
-
-
+//interface con los atributos para usar mediante esta interface.
+ export interface Platos extends Document{
+      nombre_plato:String;
+      porciones: String;
 }

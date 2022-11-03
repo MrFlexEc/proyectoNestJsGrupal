@@ -1,8 +1,15 @@
+//importacion de libreria para mongodb
 import{ Schema } from 'mongoose';
+//definiendo el modelo de los datos para mongodb, para que puedan ser almacenado en la base de datos.
 
 export const PlatosSchema = new Schema({
-    id_p: {type:Number, requied:true},
+    //atributos asignados de la entidad platos
     nombre_plato: String,
-    porciones: String
+    porciones: String,
 
+    //haciendo ref al atributo transaccional que tendra su id_, en este caso id_paciente a la entidad registro
+    registro:{
+        type: Schema.Types.ObjectId,
+        ref:"Registro"
+    }
 });

@@ -1,5 +1,8 @@
+//Creacion de clase donde se enviaran los datos de la aplicacion cliente/Servidor
 export class CreateRegistroDTO{
-    id_S:Number;
+    //atributos asignados por el docente
+    id_pacientes:String;
+    id_platos:String;
     fecha:string;
     hora: string;
     numero_de_calorias_consumida:Number;

@@ -1,63 +1,59 @@
+//importacion de libreria y de clases y servicios que seran usados dentro del controlador
 import { Controller, Get, Post, Put, Delete, Res,HttpStatus,Body, Param,NotFoundException} from '@nestjs/common';
-import {CreatePlatoDTO } from './dto/platos.dto'
-import { PlatosService } from './platos.service';
+import {CreatePlatoDTO } from './dto/platos.dto';//contiene los atributos cliente/servidor 
+import { PlatosService } from './platos.service';//contiene metodos"peticiones".
 
+//controlador que manejara las respectivas peticiones servidor-cliente
 @Controller('platos')
-export class PlatosController {
+export class PlatosController {  
+    //cada una de estas peticiones usa el metodo service ya que contiene los respectivos metodos para las peticiones 
     constructor(private platosService:PlatosService ){}
-    @Post('/create')
+    
+    //peticion post para crear platos, apartir del body de postman 
+    @Post('/crear')
     async createPost(@Res() res,@Body() createPlatoDTO:CreatePlatoDTO){
-        //console.log(createPlatoDTO);
         const plato = await this.platosService.createPlato(createPlatoDTO);
         return res.status(HttpStatus.OK).json({
             message: 'Plato ingresado Correctamente..',
-            //atra vez de la propiedad platos que envie platos
             plato
 
         });
     }
 
+    //peticion get, para obtener todo los platos dentro del array de este.
     @Get('/')
-    async getPlatos(@Res()res){
+    async VerPlatos(@Res()res){
         const platos = await this.platosService.getPlatos();
         return res.status(HttpStatus.OK).json({
             
-            //atra vez de la propiedad platos que envie platos
-            platos
+             platos
         });
     }
-
+    //peticion get, para obtener un solo plato dentro del array de platos.
     @Get('/:id_p')
-    async getPlato(@Res()res , @Param('id_p')id_plato) {
+    async VerPlato(@Res()res , @Param('id_p')id_plato) {
         const plato = await this.platosService.getPlato(id_plato)
-        //falta correccion de no ecnontrar el plato.
+        //validacion, si el plato no existe manda error.
         if(!plato)throw new NotFoundException('Plato no encontrado');
         return res.status(HttpStatus.OK).json(plato);
    }
 
-   /*@Delete('/delete')
-   async deletPlato(@Res()res, @Query('id_p')id_plato){
-   const platoDelet = await this.platosService.deletePlato(id_plato)
-   if(!platoDelet)throw new NotFoundException('Plato no encontrado');
-   return res.status(HttpStatus.OK).json({
-        message: 'Plato eliminado..',
-    //atra vez de la propiedad platos que envie platos
-        platoDelet
-   })*/
-   @Delete('/delete/:id_p')
-   async deletPlato(@Res()res, @Param('id_p')id_plato){
+   //peticion delete, para eliminar un dato apartir de un id que sera enviado como parametro.
+   @Delete('/eliminar/:id_p')
+   async EliminarPlato(@Res()res, @Param('id_p')id_plato){
         const platoDelet = await this.platosService.deletePlato(id_plato)
+        //validacion si el plato no existe arroja error.
         if(!platoDelet)throw new NotFoundException('Plato no encontrado');
         return res.status(HttpStatus.OK).json({
             message: 'Plato eliminado..',
-            //atra vez de la propiedad platos que envie platos
-            platoDelet
+             platoDelet
         });
    }
-   
-   @Put('/update/:id_p')
-   async updatePlato(@Res()res,@Body()createPlatoDTO:CreatePlatoDTO,@Param('id_p')id_plato){
+   //peticion put, para modificar un dato aparitr de la id_ es decir un parametro de envio
+   @Put('/modificar/:id_p')
+   async modificarPlato(@Res()res,@Body()createPlatoDTO:CreatePlatoDTO,@Param('id_p')id_plato){
         const updatePlato = await this.platosService.updatePlato(id_plato,createPlatoDTO);
+        //validacion, si el id, del plato no existe arroja un error.
         if(!updatePlato)throw new NotFoundException('Plato no encontrado');
         return res.status(HttpStatus.OK).json({
             message: 'Plato modificado',
