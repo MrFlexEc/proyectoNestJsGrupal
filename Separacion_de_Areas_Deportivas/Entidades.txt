@@ -1,0 +1,22 @@
+Separación de Áreas Deportivas
+
+    Entidades
+
+        Cancha
+            id_cancha
+            descripcion
+
+        Deportista
+            id_deportista
+            nombre
+            edad
+            identificacion
+            equipo_representa4
+            
+        Reservacion
+            id_reservacion
+            id_cancha
+            id_deportista
+            fecha_separacion
+            hora_inicio
+            hora_fin
