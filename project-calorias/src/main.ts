@@ -19,7 +19,8 @@ async function bootstrap() {
  //ruta que contendra swagger.
  SwaggerModule.setup("api/docs", app, document)
  //puerto
-  await app.listen(3000);
+  app.enableCors();
+  await app.listen(process.env.PORT || 443);
 
 }
 bootstrap();
