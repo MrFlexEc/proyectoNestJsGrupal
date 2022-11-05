@@ -6,5 +6,7 @@ export const EncuentroDeportivoSchema = new Schema({
     Equipo2: {type: String},
     Fecha: { type: String},
     Hora: { type: String},
-    Lugar_Partido: { type: String}
+    Lugar_Partido: { type: String},
+    //Esta referencia permite realizar la relacion con la entidad transaccional
+    pronostico:{ type: Schema.Types.ObjectId, ref: "Pronostico"}
 });

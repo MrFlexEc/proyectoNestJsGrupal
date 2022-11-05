@@ -1,3 +1,4 @@
+//Librerias, Modulos de entidades
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -6,7 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose'
 import { EncuentroDeportivoModule } from './encuentro_deportivo/encuentro_deportivo.module';
 import { PronosticoModule } from './pronostico/pronostico.module';
 
-
+//Enlace y/o unión con la base de datos mediante una importación
 //Hago uso de la base de datos de un compañero de grupo por un fallo en la mía
 @Module({
   imports: [ApostadorModule, MongooseModule.forRoot('mongodb+srv://Moreno:105822moreno@atlascluster.nncabhx.mongodb.net/test'), EncuentroDeportivoModule, PronosticoModule],
