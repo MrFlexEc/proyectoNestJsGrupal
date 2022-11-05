@@ -1,0 +1,10 @@
+Tema: Pronóstico Deportivo
+
+Entidad 1 (Maestra): Apostador
+Atributos: ID_Aportador,Nombre,Identifificacion,Celular
+
+Entidad 2 (Maestra): Encuentro_deportivo
+Atributos: ID_Encuentro_deportivo,Equipo1,Equipo2,Fecha,Hora,Lugar_Partido
+
+Entidad 3 (Transaccional): Pronóstico
+Atributos: ID_Pronostico,ID_Apostador,ID_Encuentro_deportivo,Resultado_propuesto, Valor_Apuesta,Ganancia
