@@ -1,9 +1,9 @@
 export class CreateAutosDTO {
-  descripcion: String;
-  placa: String;
-  color: String;
-  fabricante: String;
-  tipo: String;
-  anio: String;
-  clasificacion: String;
+  readonly descripcion: string;
+  readonly placa: string;
+  readonly color: string;
+  readonly fabricante: string;
+  readonly tipo: string;
+  readonly anio: string;
+  readonly clasificacion: string;
 }

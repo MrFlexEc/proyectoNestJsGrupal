@@ -1,5 +1,4 @@
-import { Schema } from 'mongoose'
-
+import { Schema } from 'mongoose';
 export const AutosSchema = new Schema({
   descripcion: String,
   placa: String,
