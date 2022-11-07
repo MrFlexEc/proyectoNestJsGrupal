@@ -15,7 +15,7 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, options)
 
-  SwaggerModule.setup('api/rest', app, document)
+  SwaggerModule.setup('api/rest/EncuentrosDeportivos', app, document)
   //activamos las validaciones 
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(443);
