@@ -13,3 +13,6 @@ o modificar un partido se ve hacer de la siguiente manera:
 }
 
 con este formato 
+
+--Para poder acceder a la documentación debe escribir la ruta :
+http://localhost:443/api/rest/EncuentrosDeportivos
