@@ -1,0 +1,15 @@
+En el swagger de la documentación no se pudo poner completo el schema de la entidad partido
+ya que las llaves foraneas al agregarlas para validarlas daban error entonces para poder crear
+o modificar un parido se ve hacer de la siguiente manera:
+
+{
+    "Fecha_partido": "2022-11-03",
+    "Goles_equipo_1":1,
+    "Goles_equipo_2":2,
+    "Observacion_partido":"Un partido clasico",
+    "Id_torneo":2,
+    "Id_equipo_1":2,
+    "Id_equipo_2":1
+}
+
+con este formato 
