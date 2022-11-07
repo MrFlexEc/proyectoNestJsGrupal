@@ -1,5 +1,7 @@
 //Importamos los metodos del CRUD get, post, put, delete en el decorador
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+//importamos para realizar documentación
+import { ApiTags } from '@nestjs/swagger';
 //importamos servicios los cuales tienen las funciones que responderan al cliente
 import { EquiposServicios } from '../servicios/equipos.service'; 
 //importamos las validaciones
@@ -7,6 +9,7 @@ import { CrearModificarEquipo } from '../validaciones/equipos.dto';
 
 
 @Controller('api/rest/equipos')
+@ApiTags("Equipos")
 export class EquiposController {
 
     //Se realiza una inyección de dependencia para que el controlador pueda ejecutar las funciones
