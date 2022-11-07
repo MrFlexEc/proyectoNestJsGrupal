@@ -17,7 +17,8 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   //Ruta para acceder a Swagger
   SwaggerModule.setup('pronostico/docs', app, document);
-  //Puerto
-  await app.listen(3000);
+  //Puerto para heroku
+  app.enableCors();
+  await app.listen(process.env.PORT || 443);
 }
 bootstrap();
