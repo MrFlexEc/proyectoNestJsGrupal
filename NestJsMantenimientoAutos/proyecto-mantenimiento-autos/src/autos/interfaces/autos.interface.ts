@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+import { Document } from 'mongoose';
 export interface Autos extends Document{
   readonly descripcion: string,
   readonly placa: string,
